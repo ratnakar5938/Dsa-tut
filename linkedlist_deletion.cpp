@@ -17,6 +17,7 @@ void linkedlist_traversal(struct Node *ptr)
     }
 }
 
+// case 1
 struct Node *deleteFirst(struct Node *head)
 {
     struct Node *ptr = new Node();
@@ -25,6 +26,7 @@ struct Node *deleteFirst(struct Node *head)
     return ptr;
 }
 
+// case 2
 struct Node *deleteAtIndex(struct Node *head, int index)
 {
     struct Node *p = head;
@@ -39,6 +41,7 @@ struct Node *deleteAtIndex(struct Node *head, int index)
     return head;
 }
 
+// case 3
 struct Node *deleteEnd(struct Node *head)
 {
     struct Node *p = head;
@@ -53,6 +56,7 @@ struct Node *deleteEnd(struct Node *head)
     return head;
 }
 
+// case 4
 struct Node *deleteOfKey(struct Node *head, int data)
 {
     struct Node *p = head;
