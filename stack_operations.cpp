@@ -55,6 +55,21 @@ void push(Stack *ptr, int data)
     }
 }
 
+void pop(Stack *ptr)
+{
+    if (!isEmpty(ptr))
+    {
+        int val = ptr->arr[ptr->top];
+        ptr->arr[ptr->top] = 0;
+        ptr->top--;
+        cout << "element poped: " << val << "\n\n";
+    }
+    else
+    {
+        cout << "Stack underflow" << endl;
+    }
+}
+
 int main()
 {
     Stack *s;
@@ -93,10 +108,21 @@ int main()
     cout << "\n";
     // cout << endl;
     cout << "stack before adding\n";
+    // stack_traversal(s);
+    // cout << "\n";
+    push(s, 44444);
+    // cout << "stack after adding\n";
     stack_traversal(s);
     cout << "\n";
-    push(s, 44444);
-    cout << "stack after adding\n";
+
+    pop(s);
+    cout << "stack after poping"
+         << "\n";
+    // pop(s);
+    // pop(s);
+    // pop(s);
+    // pop(s);
+    // pop(s);
     stack_traversal(s);
     return 0;
 }
