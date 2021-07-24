@@ -73,7 +73,6 @@ int main()
     s->top++;
 
     if (isEmpty(s))
-    // if (1)
     {
         cout << "Stack is empty"
              << "\n";
