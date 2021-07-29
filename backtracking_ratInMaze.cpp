@@ -55,16 +55,11 @@ int main()
     {
         for (int j = 0; j < n; j++)
         {
-            // cout << "Enter the element at " << j << " of line " << i << " : ";
             cin >> arr[i][j];
         }
     }
 
     int **solArr = new int *[n];
-    // for (int i = 0; i < n; i++)
-    // {
-    //     solArr[i] = new int[n];
-    // }
     for (int i = 0; i < n; i++)
     {
         solArr[i] = new int[n];
