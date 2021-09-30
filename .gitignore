@@ -2,3 +2,5 @@
 *.exe
 tempCodeRunnerFile.cpp
 adv.cpp
+.vscode
+*.code-workspace
