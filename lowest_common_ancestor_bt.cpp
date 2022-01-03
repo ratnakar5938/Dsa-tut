@@ -58,6 +58,35 @@ int LCA(Node *root, int n1, int n2)
     return path1[pc - 1];
 }
 
+Node *LCA2(Node *root, int n1, int n2)
+{
+    if (root == NULL)
+    {
+        return NULL;
+    }
+
+    if (root->data == n1 || root->data == n2)
+    {
+        return root;
+    }
+    Node *leftLCA = LCA2(root->left, n1, n2);
+    Node *rightLCA = LCA2(root->right, n1, n2);
+
+    if (leftLCA && rightLCA)
+    {
+        return root;
+    }
+
+    if (leftLCA != NULL)
+    {
+        return leftLCA;
+    }
+    else
+    {
+        return rightLCA;
+    }
+}
+
 int main()
 {
     cout << "Lowest Common Ancestor" << endl;
@@ -72,14 +101,24 @@ int main()
     int n1 = 7;
     int n2 = 6;
     int lca = LCA(root, n1, n2);
+    Node *lca2 = LCA2(root, n1, n2);
 
-    if (lca == -1)
+    // if (lca == -1)
+    // {
+    //     cout << "LCA doesn\'t exist" << endl;
+    // }
+    // else
+    // {
+    //     cout << "LCA: " << lca << endl;
+    // }
+
+    if (lca2 == NULL)
     {
         cout << "LCA doesn\'t exist" << endl;
     }
     else
     {
-        cout << "LCA: " << lca << endl;
+        cout << "LCA: " << lca2->data << endl;
     }
 
     return 0;
